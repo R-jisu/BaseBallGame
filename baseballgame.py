@@ -1,7 +1,7 @@
 from random import randrange
 
 def enter_list():
-    mylist = list((map(int, input("Enter {0} number".format(N)).split())))
+    mylist = list((map(int, input("Enter {0} number : ".format(N)).split())))
     
     while True:
         if len(set(mylist)) == N:
