@@ -23,35 +23,34 @@ def check_strike(List):
         return 99
     else:
         for m,r in zip(mylist,randomlist):
-            print(m,r)
             if m==r:
                 strike+=1
                 mylist[i]='x'
             i+=1
             
         for m in mylist:
-            print(m)
             if randomlist.count(m)!=0:
                 ball+=1
         
         print("{0} strike, {1} ball".format(strike, ball))
         return -99
 
+#######random으로 숫자 생성########################################
 global N;N = int(input("Enter number 4~6 : "))
 global randomlist; randomlist = []
 
 if N < 7:
     for i in range(N):
         number = randrange(10)
-        while number in randomlist:
+        while number in randomlist: #중복이 있을 경우 다시 랜덤으로 뽑기
             number = randrange(10)
         randomlist.append(number)
 else:
-    print("N is too big!! You should enter 4~6")
+    print("N is too big!! You should enter 4~6") # 숫자야구게임범위
     exit()
+#######중복 없음########################################   
 
-print(randomlist)
-global cnt; cnt=1
+global cnt; cnt=0
 result = 0
 
 while result!=99:
